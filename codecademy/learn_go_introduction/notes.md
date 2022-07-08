@@ -114,3 +114,40 @@
     fmt.Printf("You're averaging: %.2f.", gpa)
     // Prints: You're averaging 3.80.
     ```
+- Sprint and Sprintln
+  - Sprint & Sprintln formats using the default formats for its operands and returns the
+    resulting string.
+  - Primary difference to think about is it doesn't print a value out, it returns one for later use
+    ```go
+    grade := "100"
+    compliment := "Great job!"
+    teacherSays := fmt.Sprint("You scored a ", grade, " on the test! ", compliment)
+
+    fmt.Print(teacherSays)
+    // Prints: You scored a 100 on the test! Great job!
+
+    quote = fmt.Sprintln("Look ma,", "no spaces!")
+    fmt.Print(quote) // Prints Look ma, no spaces!
+
+    // Can also use verbs and store them using Sprint
+    template := "I wish I had a %v."
+    pet := "puppy"
+
+    var wish string
+
+    // Add your code below:
+    wish = fmt.Sprintf(template, pet)
+
+    fmt.Println(wish)
+
+    ```
+- User Input
+  - Use Scan() to get user input
+    ```go
+    fmt.Println("How are you doing?")
+
+    var response string
+    fmt.Scan(&response) //Takes first value before a space and stores it in response
+
+    fmt.Printf("I'm %v.", response)
+    ```
