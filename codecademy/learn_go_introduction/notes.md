@@ -151,3 +151,60 @@
 
     fmt.Printf("I'm %v.", response)
     ```
+
+# Conditionals
+
+## if Statement
+
+- if statements
+  ```go
+  if <condition> {
+    if-true
+  } else {
+    if-false
+  }
+  ```
+
+  ```go
+  rightTime := true
+  rightPlace := true
+
+  if rightTime && rightPlace {
+    fmt.Println("We're outta here!")
+  } else {
+    fmt.Println("Be patient...")
+  }
+  ```
+
+- if/else-if statements
+
+  ```go
+  position := 2
+
+  if position == 1 {
+    fmt.Println("You won the gold!")
+  } else if position == 2 {
+    fmt.Println("You got the silver medal.")
+  } else if position == 3 {
+    fmt.Println("Great job on bronze.")
+  } else {
+    fmt.Println("Sorry, better luck next time?")
+  }
+  ```
+
+- switch statement
+  ```go
+  clothingChoice := "sweater"
+
+  if clothingChoice == "shirt" {
+    fmt.Println("We have shirts in S and M only.")
+  } else if clothingChoice == "polos" {
+    fmt.Println("We have polos in M, L, and XL.")
+  } else if clothingChoice == "sweater" {
+    fmt.Println("We have sweaters in S, M, L, and XL.")
+  } else {
+    fmt.Println("Sorry, we don't carry that.")
+  }
+  ```
+
+- Scope Short Declaration Statement
