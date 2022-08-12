@@ -207,4 +207,52 @@
   }
   ```
 
-- Scope Short Declaration Statement
+## Scope Short Declaration Statement
+- Can include short variable declaration before providing a condition in an ```if``` or ```switch``` statement
+- The declared variable is scoped to the statement blocks and no available any where else
+
+  ```go
+  x := 8
+  y := 9
+  if product := x * y; product > 60 {
+    fmt.Println(product, "  is greater than 60")
+  }
+  ```
+
+# Functions
+
+  ```go
+  func <name>(param1 int32, param2 string) <returnType>{
+    // code
+
+    return <variable1>, <variable2>
+  }
+
+  func main() {
+    var1, var2 := 1, 2
+
+    var1, var2 = <name>(var1, var2)
+  }
+  ```
+
+  - Defer: tells Go to run a function, but at the end of the current function; delays a function call to the end of the current scope
+
+    ```go
+    func calculateTaxes(revenue, deductions, credits float64) float64 {
+      defer fmt.Println("Taxes Calculated!")
+      taxRate := .06143
+      fmt.Println("Calculating Taxes")
+
+      if deductions == 0 || credits == 0 {
+        return revenue * taxRate
+      }
+
+
+      taxValue := (revenue - (deductions * credits)) * taxRate
+      if taxValue >= 0 {
+        return taxValue
+      } else {
+        return 0
+      }
+    }
+    ```
