@@ -196,14 +196,17 @@
   ```go
   clothingChoice := "sweater"
 
-  if clothingChoice == "shirt" {
+  switch clothingChoice {
+  case "shirt":
     fmt.Println("We have shirts in S and M only.")
-  } else if clothingChoice == "polos" {
+  case "polos":
     fmt.Println("We have polos in M, L, and XL.")
-  } else if clothingChoice == "sweater" {
+  case "sweater":
     fmt.Println("We have sweaters in S, M, L, and XL.")
-  } else {
-    fmt.Println("Sorry, we don't carry that.")
+  case "jackets":
+    fmt.Println("We have jackets in all sizes.")
+  default:
+    fmt.Println("Sorry, we don't carry that")
   }
   ```
 
