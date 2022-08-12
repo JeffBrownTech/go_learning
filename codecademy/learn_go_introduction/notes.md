@@ -259,3 +259,19 @@
       }
     }
     ```
+
+## Addresses and Pointers
+- Address: space a computer allocates a variable in memory
+  ```go
+  x := "My very first address"
+  fmt.Println(&x)
+  ```
+
+- Pointers are variables that specifically store addresses
+- Can set the data type of the addresses' value for the pointer
+  ```go
+  var pointerForInt *int
+  ```
+
+- In the example above, ```pointerForInt``` stores the address of a variable that has an ```int``` data type
+- The ```*``` operator signifies that this variable will store an address and the ```int``` portion means that the address contaisn an integer value
