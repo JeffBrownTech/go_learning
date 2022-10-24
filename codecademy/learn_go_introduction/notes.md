@@ -275,3 +275,43 @@
 
 - In the example above, ```pointerForInt``` stores the address of a variable that has an ```int``` data type
 - The ```*``` operator signifies that this variable will store an address and the ```int``` portion means that the address contaisn an integer value
+- Dereferencing
+  - Use the pointer to access the address and change the value
+    ```go
+    lyrics := "Moments so dear" 
+    pointerForStr := &lyrics
+
+    *pointerForStr = "Journeys to plan" 
+
+    fmt.Println(lyrics) // Prints: Journeys to plan
+    ```
+
+    ```go
+    star := "Polaris"	
+    starAddress := &star    
+        
+    *starAddress = "Sirius"    
+    fmt.Println("The actual value of star is", star)
+    ```
+
+- Changing Values in Different Scope
+  - Go is a pass-by-value language
+  - When calling a function from another function and passing a parameter value, the called function cannot modify the variable in the other function
+  - Pass the pointer value to the parameter instead so the other function can modify the value
+
+  ```go
+  // Change brainwash to have a pointer parameter
+  func brainwash(saying *string) {
+    // Dereference saying below: 
+    *saying = "Beep Boop."
+  }
+
+  func main() {
+    greeting := "Hello there!"
+    
+    // Call your brainwash() below:
+    brainwash(&greeting)
+    
+    fmt.Println("greeting is now:", greeting)
+  }
+  ```
