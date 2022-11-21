@@ -39,6 +39,7 @@ func main() {
 
 	fmt.Println(bbb, ccc)
 
+	// Pointers
 	s := "Hello, world!"
 
 	p := &s
