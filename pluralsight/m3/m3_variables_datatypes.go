@@ -37,7 +37,7 @@ func main() {
 	const bbb float32 = constA
 	const ccc float64 = constA
 
-	fmt.Println(bbb, ccc)
+	fmt.Println(constA, bbb, ccc)
 
 	// Pointers
 	s := "Hello, world!"
@@ -53,4 +53,14 @@ func main() {
 	// new() allocates memory based on the type used
 	p = new(string)
 	fmt.Println(p, *p) // Prints new memory address and the value, which is currently blank/null
+
+	// Iota is related to position in constant group
+	// Resets with each group
+	const myA = iota // Value is 0
+
+	const (
+		myB = iota     // Value is 0
+		myC            // 1
+		myD = 3 * iota // 6
+	)
 }
